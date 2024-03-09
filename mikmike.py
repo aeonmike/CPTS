@@ -29,6 +29,10 @@ def scan():
     print_banner()
     subprocess.run(["python3", "scan.py"])
 
+def nmap():
+    clear_screen()
+    print_banner()
+    subprocess.run(["python3", "nmap.py"])
 
 def attack():
     print("Attacking initiated...")

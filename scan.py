@@ -1,4 +1,15 @@
 import os
+from colorama import init, Fore, Style
+import subprocess
+
+def clear_screen():
+    os.system('clear' if os.name == 't' else 'clear')
+
+def nmap():
+    print_banner()
+    clear_screen()
+    subprocess.run(["python3", "nmap.py"])
+
 
 def scan():
     while True:
@@ -6,7 +17,7 @@ def scan():
         print("Scan Menu:")
         print("1. nmap")
         print("2. nikto")
-        print("3. mapiti")
+        print("3. wapiti")
         print("4. sqlmap")
         print("5. skipfish")
         print("6. Exit")
@@ -16,7 +27,7 @@ def scan():
 
         # Process user choice
         if choice == "1":
-            os.system("nmap")  # Execute nmap
+            os.system("python3 nmap.py")  # Execute nmap
         elif choice == "2":
             os.system("nikto")  # Execute nikto
         elif choice == "3":
