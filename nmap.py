@@ -7,8 +7,8 @@ def clear_screen():
 
 def install_nmap():
     print("Nmap is not found. Installing...")
-    subprocess.run(["sudo", "apt", "update"])
-    subprocess.run(["sudo", "apt", "install", "nmap"])
+    subprocess.run(["sudo", "apt", "update", "-y"])
+    subprocess.run(["sudo", "apt", "install", "nmap", "-y"])
 
 def check_nmap():
     try:
@@ -19,7 +19,7 @@ def check_nmap():
 
 def scan_host(host):
     print(f"Scanning host {host} for common ports...")
-    subprocess.run(["nmap", "-F", host])
+    subprocess.run(["nmap", "-F", "-T3", host])
 
 def main():
     if not check_nmap():
