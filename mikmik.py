@@ -12,7 +12,7 @@ def print_banner():
 ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░ ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓████████▓▒░ 
                                                             
 Security Framework V.1                                                            
-
+Author --- Mike Cabalin
     """
     print(Fore.GREEN + banner)
 
@@ -29,14 +29,10 @@ def scan():
     print_banner()
     subprocess.run(["python3", "scan.py"])
 
-def nmap():
+def attack():
     clear_screen()
     print_banner()
-    subprocess.run(["python3", "nmap.py"])
-
-def attack():
-    print("Attacking initiated...")
-    # Implement your attack logic here
+    subprocess.run(["python3", "attack.py"])
 
 def main():
     while True:
